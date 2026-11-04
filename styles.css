@@ -1,0 +1,334 @@
+:root {
+  --primary: #102a56;
+  --primary-light: #1c477e;
+  --accent: #f5bd3b;
+  --background: #f3f6fb;
+  --surface: #ffffff;
+  --text: #1c2738;
+  --muted: #65738a;
+  --border: #dce3ed;
+  --shadow: 0 8px 24px rgba(16, 42, 86, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  padding-top: 68px;
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--primary);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+header > section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #ffffff;
+  text-align: center;
+}
+
+header > section h1 {
+  max-width: 800px;
+  margin: 0 auto 16px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.15;
+}
+
+header > section p {
+  margin: 0 auto 28px;
+  color: #e7edf7;
+  font-size: 1.1rem;
+}
+
+header > section a {
+  display: inline-block;
+  margin: 6px;
+  padding: 12px 22px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+header > section a:hover,
+header > section a:focus-visible {
+  transform: translateY(-2px);
+  background: #ffd36b;
+}
+
+header > section a + a {
+  background: transparent;
+  color: #ffffff;
+}
+
+header > section a + a:hover,
+header > section a + a:focus-visible {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+main {
+  width: min(1100px, calc(100% - 32px));
+  margin: 40px auto;
+}
+
+main > section {
+  margin-bottom: 28px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+h3 {
+  color: var(--primary-light);
+}
+
+#about ul {
+  padding-left: 24px;
+}
+
+#about li {
+  margin: 6px 0;
+}
+
+#matches {
+  overflow-x: auto;
+}
+
+label {
+  display: inline-block;
+  margin: 8px 0;
+  font-weight: 700;
+}
+
+select,
+input {
+  width: 100%;
+  max-width: 420px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #ffffff;
+  color: var(--text);
+  font: inherit;
+}
+
+#team-filter {
+  display: block;
+  margin-bottom: 18px;
+}
+
+table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+caption {
+  padding: 10px;
+  color: var(--muted);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background: #f6f8fc;
+}
+
+td a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#booking form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#booking form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#booking form select,
+#booking form input {
+  max-width: none;
+}
+
+button {
+  width: fit-content;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--primary-light);
+}
+
+#booking aside {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  background: #f8faff;
+}
+
+#booking aside h3 {
+  margin-top: 0;
+}
+
+#booking aside p {
+  margin: 8px 0;
+}
+
+#guidelines article {
+  display: inline-block;
+  width: calc(33.333% - 14px);
+  margin: 8px 12px 8px 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f8faff;
+  vertical-align: top;
+}
+
+#guidelines article:last-child {
+  margin-right: 0;
+}
+
+#guidelines article h3 {
+  margin-top: 0;
+}
+
+footer {
+  padding: 22px;
+  background: var(--primary);
+  color: #ffffff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  nav a {
+    padding: 7px 9px;
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding-top: 98px;
+  }
+
+  header > section {
+    padding: 70px 18px;
+  }
+
+  main {
+    width: min(100% - 20px, 1100px);
+    margin: 20px auto;
+  }
+
+  main > section {
+    padding: 20px;
+  }
+
+  #booking form {
+    grid-template-columns: 1fr;
+  }
+
+  #guidelines article {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  table {
+    min-width: 720px;
+  }
+}

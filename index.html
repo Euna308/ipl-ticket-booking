@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL 2026 Ticket Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="#matches">Matches</a>
+      <a href="#booking">Book Ticket</a>
+      <a href="#my-bookings">My Bookings</a>
+      <a href="#guidelines">Guidelines</a>
+    </nav>
+
+    <section aria-labelledby="hero-title">
+      <h1 id="hero-title">Experience The Stadium Energy Live!</h1>
+      <p>Find your match and get ready to cheer for your team.</p>
+      <a href="#matches">View Schedule</a>
+      <a href="#booking">Book Ticket</a>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About IPL 2026</h2>
+      <p>
+        Get ready for exciting cricket, passionate fans, and unforgettable
+        moments at IPL 2026.
+      </p>
+
+      <h3>Popular Teams</h3>
+      <ul>
+        <li>Chennai Super Kings</li>
+        <li>Mumbai Indians</li>
+        <li>Royal Challengers Bengaluru</li>
+        <li>Kolkata Knight Riders</li>
+        <li>Rajasthan Royals</li>
+      </ul>
+
+      <h3>Major Match Venues</h3>
+      <ul>
+        <li>Wankhede Stadium, Mumbai</li>
+        <li>M. A. Chidambaram Stadium, Chennai</li>
+        <li>M. Chinnaswamy Stadium, Bengaluru</li>
+        <li>Eden Gardens, Kolkata</li>
+      </ul>
+    </section>
+
+    <section id="matches" aria-labelledby="matches-title">
+      <h2 id="matches-title">Match Schedule</h2>
+
+      <label for="team-filter">Filter by team:</label>
+      <select id="team-filter" name="team-filter">
+        <option value="all">All teams</option>
+        <option value="csk">Chennai Super Kings</option>
+        <option value="mi">Mumbai Indians</option>
+        <option value="rcb">Royal Challengers Bengaluru</option>
+        <option value="kkr">Kolkata Knight Riders</option>
+      </select>
+
+      <table>
+        <caption>Sample IPL 2026 matches and ticket prices</caption>
+        <thead>
+          <tr>
+            <th scope="col">Match Number</th>
+            <th scope="col">Teams</th>
+            <th scope="col">Date &amp; Time</th>
+            <th scope="col">Venue</th>
+            <th scope="col">General</th>
+            <th scope="col">Premium</th>
+            <th scope="col">VIP</th>
+            <th scope="col">Booking</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Chennai Super Kings vs Mumbai Indians</td>
+            <td>
+              <time datetime="2026-04-01T19:30">1 Apr 2026, 7:30 PM</time>
+            </td>
+            <td>Wankhede Stadium, Mumbai</td>
+            <td>₹1,000</td>
+            <td>₹2,500</td>
+            <td>₹5,000</td>
+            <td><a href="#booking">Book</a></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Royal Challengers Bengaluru vs Kolkata Knight Riders</td>
+            <td>
+              <time datetime="2026-04-02T19:30">2 Apr 2026, 7:30 PM</time>
+            </td>
+            <td>M. Chinnaswamy Stadium, Bengaluru</td>
+            <td>₹900</td>
+            <td>₹2,200</td>
+            <td>₹4,800</td>
+            <td><a href="#booking">Book</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="booking" aria-labelledby="booking-title">
+      <h2 id="booking-title">Book Your Ticket</h2>
+
+      <form action="#" method="get">
+        <div>
+          <label for="match">Match</label>
+          <select id="match" name="match" required>
+            <option value="">Choose a match</option>
+            <option value="1">Match 1: CSK vs MI</option>
+            <option value="2">Match 2: RCB vs KKR</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="stand">Stand Category</label>
+          <select id="stand" name="stand" required>
+            <option value="">Choose a category</option>
+            <option value="general">General</option>
+            <option value="premium">Premium</option>
+            <option value="vip">VIP</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="quantity">Number of Tickets</label>
+          <input
+            id="quantity"
+            name="quantity"
+            type="number"
+            min="1"
+            max="10"
+            value="1"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="phone">Phone Number</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+          >
+        </div>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+
+      <aside aria-labelledby="summary-title">
+        <h3 id="summary-title">Booking Summary</h3>
+        <p>Match: Select a match</p>
+        <p>Stand: Select a category</p>
+        <p>Ticket price: —</p>
+        <p>Quantity: 1</p>
+        <p>Total amount: —</p>
+      </aside>
+    </section>
+
+    <section id="my-bookings" aria-labelledby="my-bookings-title">
+      <h2 id="my-bookings-title">My Ticket Bookings</h2>
+
+      <table>
+        <caption>Your booking records</caption>
+        <thead>
+          <tr>
+            <th scope="col">Booking ID</th>
+            <th scope="col">Match</th>
+            <th scope="col">Stand</th>
+            <th scope="col">Tickets</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="5">No bookings yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="guidelines" aria-labelledby="guidelines-title">
+      <h2 id="guidelines-title">Ticket Guidelines</h2>
+
+      <article>
+        <h3>Ticket Verification</h3>
+        <p>Keep your ticket ready to be checked at the stadium entrance.</p>
+      </article>
+
+      <article>
+        <h3>ID Proof Requirement</h3>
+        <p>Bring a valid photo ID that matches the name on your booking.</p>
+      </article>
+
+      <article>
+        <h3>Prohibited Items</h3>
+        <p>
+          Check the venue rules before arriving. Restricted items are not
+          allowed inside.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
+  </footer>
+</body>
+</html>
