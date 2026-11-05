@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSK Ticket Booking</title>
+  <link rel="stylesheet" href="booking-styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Chennai Super Kings ticket booking">
+      <img src="assets/csk-logo.png" alt="Chennai Super Kings logo">
+      <span>CHENNAI SUPER KINGS</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#matches">Matches</a>
+      <a href="booking.html" aria-current="page">Book Ticket</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="booking-card" aria-labelledby="form-title">
+      <h1 id="form-title">Ticket Booking Form</h1>
+
+      <form action="#" method="get">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" minlength="2" maxlength="60" autocomplete="name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" maxlength="100" autocomplete="email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" minlength="10" maxlength="15" pattern="[0-9+() -]{10,15}" title="Enter 10 to 15 characters using digits, spaces, +, hyphens, or parentheses." autocomplete="tel" required>
+        </div>
+
+        <div class="form-field">
+          <label for="match">Match Selection</label>
+          <select id="match" name="match" required>
+            <option value="">Choose a match</option>
+            <option value="1">Match 1: CSK vs MI</option>
+            <option value="2">Match 2: RCB vs KKR</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="stand">Stand Category</label>
+          <select id="stand" name="stand" required>
+            <option value="">Choose a stand</option>
+            <option value="general">General</option>
+            <option value="premium">Premium</option>
+            <option value="vip">VIP</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="quantity">Number of Tickets</label>
+          <input id="quantity" name="quantity" type="number" min="1" max="10" step="1" value="1" required>
+          <small>Choose between 1 and 10 tickets.</small>
+        </div>
+
+        <fieldset>
+          <legend>Email reminder preference</legend>
+          <label class="choice"><input type="radio" name="reminder" value="yes" required> Yes</label>
+          <label class="choice"><input type="radio" name="reminder" value="no"> No</label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+          <button type="reset" class="reset-button">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CSK Ticket Booking</p>
+  </footer>
+</body>
+</html>
