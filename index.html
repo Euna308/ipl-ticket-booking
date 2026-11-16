@@ -12,7 +12,11 @@
       <img src="assets/csk-logo.png" alt="Chennai Super Kings logo">
       <span>CHENNAI SUPER KINGS</span>
     </a>
-    <nav aria-label="Main navigation">
+<button id="menu-toggle" class="menu-toggle" type="button"
+        aria-expanded="false" aria-controls="main-nav">
+  ☰ Menu
+</button>
+<nav id="main-nav" aria-label="Main navigation">
       <a href="#matches">Matches</a>
       <a href="booking.html">Book Ticket</a>
       <a href="#my-bookings">My Bookings</a>
@@ -65,6 +69,13 @@
         <option value="kkr">Kolkata Knight Riders</option>
       </select>
 
+      <div class="match-view-controls">
+  <label for="match-view">View:</label>
+  <select id="match-view">
+    <option value="grid">Grid</option>
+    <option value="list">List</option>
+  </select>
+</div>
       <table>
         <caption>Sample IPL 2026 matches and ticket prices</caption>
         <thead>

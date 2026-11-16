@@ -72,4 +72,40 @@ function updateBookingSummary() {
 
 matchSelect.addEventListener("change", updateBookingSummary);
 standSelect.addEventListener("change", updateBookingSummary);
-quantityInput.addEventListener("input", updateBookingSummary);
+quantityInput.addEventListener("input", updateBookingSummary);  
+
+const teamFilter = document.getElementById("team-filter");
+const matchView = document.getElementById("match-view");
+const matchSection = document.getElementById("matches");
+
+if (teamFilter && matchView && matchSection) {
+  const matchRows = matchSection.querySelectorAll("tbody tr");
+
+  teamFilter.addEventListener("change", () => {
+    const team = teamFilter.value.toLowerCase();
+
+    matchRows.forEach((row) => {
+      const rowText = row.textContent.toLowerCase();
+      row.hidden = team !== "all" && !rowText.includes(team);
+    });
+  });
+
+  matchView.addEventListener("change", () => {
+    matchSection.classList.toggle("list-view", matchView.value === "list");
+  });
+}
+
+
+
+
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+
