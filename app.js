@@ -39,3 +39,37 @@ if (form) {
     showToast("Booking form submitted!");
   });
 }
+
+const matchSelect = document.getElementById("match");
+const standSelect = document.getElementById("stand");
+const quantityInput = document.getElementById("quantity");
+
+function updateBookingSummary() {
+  const matchName =
+    matchSelect.options[matchSelect.selectedIndex].text;
+  const standName =
+    standSelect.options[standSelect.selectedIndex].text;
+  const quantity = Number(quantityInput.value) || 1;
+
+  const standPrices = {
+    general: 500,
+    premium: 1200,
+    vip: 2500
+  };
+
+  const pricePerTicket = standPrices[standSelect.value] || 0;
+
+  document.getElementById("summary-match").textContent =
+    matchSelect.value ? matchName : "Not selected";
+  document.getElementById("summary-stand").textContent =
+    standSelect.value ? standName : "Not selected";
+  document.getElementById("summary-quantity").textContent = quantity;
+  document.getElementById("summary-total").textContent =
+    (pricePerTicket * quantity).toLocaleString("en-IN");
+
+  showToast("Booking summary updated.");
+}
+
+matchSelect.addEventListener("change", updateBookingSummary);
+standSelect.addEventListener("change", updateBookingSummary);
+quantityInput.addEventListener("input", updateBookingSummary);

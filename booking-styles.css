@@ -249,3 +249,20 @@ footer p {
     font-size: 0.9rem;
   }
 }
+
+.booking-summary {
+  grid-column: 1 / -1;
+  padding: 16px;
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  background: rgba(255, 178, 28, 0.12);
+}
+
+.booking-summary h2 {
+  margin: 0 0 10px;
+  color: var(--gold);
+}
+
+.booking-summary p {
+  margin: 6px 0;
+}
